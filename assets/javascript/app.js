@@ -1,7 +1,12 @@
 $(document).ready(function() {
 
+    $('#betterLuck').hide();
     $('#correctScore').hide();
     $('#wrongScore').hide();
+    $('#goodJob').hide();
+    $('#calculateSecond').hide();
+
+    var stringOne = "actualTime";
 
     function startTimer(duration, display) {
         var timer = duration,
@@ -13,7 +18,7 @@ $(document).ready(function() {
             minutes = minutes < 10 ? "0" + minutes : minutes;
             seconds = seconds < 10 ? "0" + seconds : seconds;
 
-            display.text("You have " + minutes + ":" + seconds + " Seconds Left, HURRY!");
+            display.html("You have <span class=" + stringOne + ">" + minutes + ":" + seconds + "</span>" + " Seconds Left, HURRY!");
 
             if (--timer < 0) {
                 timer = 0;
@@ -35,13 +40,40 @@ $(document).ready(function() {
 
                 }
 
-                $('#test').hide();
-                $('#calculate').hide();
-                $('#correctScore').show();
-                $('#wrongScore').show();
+                setTimeout(function() {
+                    $('#dontShow').fadeOut('slow');
+                }, 0);
+                setTimeout(function() {
+                    $('#test').fadeOut('slow');
+                }, 0);
+                setTimeout(function() {
+                    $('#calculate').fadeOut('slow');
+                }, 0);
 
-                $('#correct').text(correct);
-                $('#wrong').text(wrong);
+                setTimeout(function() {
+                    $('#correctScore').fadeIn('slow');
+                }, 1000);
+                setTimeout(function() {
+                    $('#wrongScore').fadeIn('slow');
+                }, 1000);
+                // $('#test').hide();
+                // $('#calculate').hide();
+                // $('#correctScore').show();
+                // $('#wrongScore').show();
+
+                $('#correct').html(correct);
+                $('#wrong').html(wrong);
+
+                if (correct < 10) {
+                    setTimeout(function() {
+                        $('#betterLuck').fadeIn('slow');
+                    }, 1000);
+                } else {
+                    setTimeout(function() {
+                        $('#goodJob').fadeIn('slow');
+                    }, 1000);
+                }
+
 
             }
         }, 1000);
@@ -104,7 +136,7 @@ $(document).ready(function() {
         ["Jingle Bell Rock", "Santa Claus is Coming to Town", "Winter Wonderland", "Merry Christmas Darling", "Jingle Bell Rock"],
         ["5", "3", "7", "10", "10"],
         ["Susan Waverly", "Doris Lenz", "Betty Haynes", "Emma Allen", "Betty Haynes"],
-        ["A Horse’s Tale", "The Prince and the Pauper", "The American Claimant", "The Gilded Age: A Tale of Today", "The Prince and the Pauper"],
+        ["A Horse's Tale", "The Prince and the Pauper", "The American Claimant", "The Gilded Age: A Tale of Today", "The Prince and the Pauper"],
         ["Robert Zemeckis", "Jon Favreau", "Chris Columbus", "Ron Howard", "Robert Zemeckis"],
         ["Fred Claus", "Like Father, Like Santa", "Santa Baby", "The Santa Clause", "The Santa Clause"],
         ["Hot Wheels", "Power Rangers", "Tickle Me Elmo", "Bratz", "Power Rangers"],
@@ -173,14 +205,42 @@ $(document).ready(function() {
             }
 
         }
+        setTimeout(function() {
+            $('#dontShow').fadeOut('slow');
+        }, 0);
+        setTimeout(function() {
+            $('#test').fadeOut('slow');
+        }, 0);
+        setTimeout(function() {
+            $('#calculate').fadeOut('slow');
+        }, 0);
 
-        $('#test').hide();
-        $('#calculate').hide();
-        $('#correctScore').show();
-        $('#wrongScore').show();
+        setTimeout(function() {
+            $('#correctScore').fadeIn('slow');
+        }, 1000);
+        setTimeout(function() {
+            $('#wrongScore').fadeIn('slow');
+        }, 1000);
+        // $('#test').hide();
+        // $('#calculate').hide();
+        // $('#correctScore').show();
+        // $('#wrongScore').show();
 
-        $('#correct').append(correct);
-        $('#wrong').append(wrong);
+        $('#correct').html(correct);
+        $('#wrong').html(wrong);
+
+        if (correct < 10) {
+            setTimeout(function() {
+                $('#betterLuck').fadeIn('slow');
+            }, 1000);
+            setTimeout(function() {
+                $('#calculateSecond').fadeIn('slow');
+            }, 2000);
+        } else {
+            setTimeout(function() {
+                $('#goodJob').fadeIn('slow');
+            }, 1000);
+        }
 
 
         // alert( "Correct=" + correct + " Wrong=" +wrong );

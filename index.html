@@ -5,27 +5,48 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="assets/javascript/app.js?x=1"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <title></title>
+    <link rel = "stylesheet"
+   type = "text/css"
+   href = "assets/css/style.css" />
+    <title>Trivia Game</title>
 </head>
 
 <body>
-<div id="status">
-	
+<div id="snow" class="container">
+<header class="triviaHeader">Christmas Movie Trivia</header>
+<div id="dontShow">
+<div id="status" class="trackCount">
+	Your Time Start NOW!
 </div>
-<div id = "test">
+</div>
+<div id = "test" class="testClass">
 	
 	
 </div>
 
-<input type ="submit" id="calculate">
+<input type ="submit" id="calculate" class="submitButton">
 
-<div id="finalScore">
+<div id="finalScore" class="finalScoreClass">
 	<div id="correctScore">
 		You answered <span id="correct"> </span> correctly!
 	</div>
 	<div id="wrongScore">
 		You answered <span id="wrong"> </span> wrong!
 	</div>
+	</div>
+	<div id="betterLuck" class="betterLuckClass">
+		<img width="400px" src="assets/images/aww.png">
+		<p>
+	</div>
+	<div id="goodJob">
+		<img width="400px" src="assets/images/awesome.jpg">
+	</div>
+	<a href="index.html">
+	<input type ="submit" id="calculateSecond" value="Retake it?" class="submitButton">
+	</a>
+	<p>
+
+
 </div>
 <script type="text/javascript"></script>
 
