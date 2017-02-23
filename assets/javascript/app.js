@@ -61,13 +61,16 @@ $(document).ready(function() {
                 // $('#correctScore').show();
                 // $('#wrongScore').show();
 
-                $('#correct').html(correct);
-                $('#wrong').html(wrong);
+                $('#correct').text(correct);
+                $('#wrong').text(wrong);
 
                 if (correct < 10) {
                     setTimeout(function() {
                         $('#betterLuck').fadeIn('slow');
                     }, 1000);
+                    setTimeout(function() {
+                $('#calculateSecond').fadeIn('slow');
+            }, 2000);
                 } else {
                     setTimeout(function() {
                         $('#goodJob').fadeIn('slow');
@@ -226,8 +229,8 @@ $(document).ready(function() {
         // $('#correctScore').show();
         // $('#wrongScore').show();
 
-        $('#correct').html(correct);
-        $('#wrong').html(wrong);
+        $('#correct').text(correct);
+        $('#wrong').text(wrong);
 
         if (correct < 10) {
             setTimeout(function() {
